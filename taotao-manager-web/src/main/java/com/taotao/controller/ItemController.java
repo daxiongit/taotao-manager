@@ -29,9 +29,16 @@ public class ItemController {
 		return "index";
 	}
 	
+	/*显示商品列表页面*/
 	@RequestMapping("/item-list")
 	public String itemList(){
 		return "item-list";
+	}
+	
+	/*显示新增商品页面*/
+	@RequestMapping("/item-add")
+	public String itemAdd(){
+		return "item-add";
 	}
 	
 	@RequestMapping("/item/list")
