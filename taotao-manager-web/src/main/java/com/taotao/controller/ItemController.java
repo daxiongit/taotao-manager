@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.taotao.common.utils.EasyUIResult;
+import com.taotao.common.utils.TaotaoResult;
 import com.taotao.pojo.Item;
 import com.taotao.service.ItemService;
 
@@ -29,16 +30,22 @@ public class ItemController {
 		return "index";
 	}
 	
-	/*显示商品列表页面*/
+	/*显示商品列表页面
 	@RequestMapping("/item-list")
 	public String itemList(){
 		return "item-list";
 	}
 	
-	/*显示新增商品页面*/
+	显示新增商品页面
 	@RequestMapping("/item-add")
 	public String itemAdd(){
 		return "item-add";
+	}*/
+	
+	// 显示其他页面
+	@RequestMapping("/{page}")
+	public String showPage(@PathVariable String page){
+		return page;
 	}
 	
 	@RequestMapping("/item/list")
@@ -46,6 +53,13 @@ public class ItemController {
 	public EasyUIResult getItemList(@RequestParam(defaultValue = "1")Integer page,@RequestParam(defaultValue = "30")Integer rows){
 		EasyUIResult result = itemService.getItemList(page, rows);
 		return result;
+	}
+	
+	@RequestMapping("/item/save")
+	@ResponseBody
+	public TaotaoResult saveItem(Item item,String desc){
+		itemService.saveItem(item, desc, null);
+		return TaotaoResult.ok();
 	}
 	
 }

@@ -39,6 +39,13 @@ public class ItemParam {
         this.updated = updated;
         this.paramData = paramData;
     }
+    
+    public ItemParam(Long id, Long itemCatId, Date created, Date updated) {
+        this.id = id;
+        this.itemCatId = itemCatId;
+        this.created = created;
+        this.updated = updated;
+    }
 
     /**
      *

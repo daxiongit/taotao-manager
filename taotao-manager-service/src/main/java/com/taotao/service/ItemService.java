@@ -9,4 +9,6 @@ public interface ItemService {
 	
 	EasyUIResult getItemList(Integer page,Integer row);
 	
+	void saveItem(Item item,String desc,String itemParams);
+	
 }
