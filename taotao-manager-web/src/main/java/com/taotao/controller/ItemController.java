@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -55,11 +56,11 @@ public class ItemController {
 		return result;
 	}
 	
-	@RequestMapping("/item/save")
+	@RequestMapping(value = "/item/save", method = RequestMethod.POST)
 	@ResponseBody
-	public TaotaoResult saveItem(Item item,String desc){
-		itemService.saveItem(item, desc, null);
-		return TaotaoResult.ok();
+	public TaotaoResult saveItem(Item item,String desc,String itemParams) throws Exception{
+		TaotaoResult result = itemService.saveItem(item, desc, itemParams);
+		return result;
 	}
 	
 }
