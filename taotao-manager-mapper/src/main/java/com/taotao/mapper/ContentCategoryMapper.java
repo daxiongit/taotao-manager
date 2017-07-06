@@ -37,7 +37,7 @@ public interface ContentCategoryMapper {
      *
      * @mbggenerated 2017-06-13
      */
-    @Insert({
+    /*@Insert({
         "insert into tb_content_category (id, parent_id, ",
         "name, status, sort_order, ",
         "is_parent, created, ",
@@ -46,7 +46,7 @@ public interface ContentCategoryMapper {
         "#{name,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{sortOrder,jdbcType=INTEGER}, ",
         "#{isParent,jdbcType=BIT}, #{created,jdbcType=TIMESTAMP}, ",
         "#{updated,jdbcType=TIMESTAMP})"
-    })
+    })*/
     int insert(ContentCategory record);
 
     /**
