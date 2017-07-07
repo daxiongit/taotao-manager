@@ -59,6 +59,23 @@ public class Content {
     private String content;
 
     /**
+     * 新增构造方法
+     * (java.lang.Long, java.lang.Long, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.util.Date, java.util.Date)
+     * */
+    public Content(Long id, Long categoryId, String title, String subTitle, String titleDesc, String url, String pic, String pic2, Date created, Date updated) {
+        this.id = id;
+        this.categoryId = categoryId;
+        this.title = title;
+        this.subTitle = subTitle;
+        this.titleDesc = titleDesc;
+        this.url = url;
+        this.pic = pic;
+        this.pic2 = pic2;
+        this.created = created;
+        this.updated = updated;
+    }
+    
+    /**
      *
      * @mbggenerated 2017-06-13
      */
